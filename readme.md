@@ -1,0 +1,1 @@
+The PowerShell script found in this directory is used to setup firewall rules for VMware Cloud on AWS to support Tanzu Kubernetes Grid deployments.
