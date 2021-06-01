@@ -1,14 +1,17 @@
+#Replace these variables with your own environment information
+###############################################################################
 $RefreshToken = "" #Auth Token
 $OrgName = "" #Organization Name not ID
 $SDDCName = "" #SDDC Name
 $TKGNetwork = "10.130.11.0/24" #Network address the Kubernetes Cluster Runs in
 $TKGNetworkName = "Tanzu Network Segment" #Name of the Kubernetes Cluster Network
-$TKGBootStrapper = "10.10.0.0/16" #Bootstrapper address Can be single IP or range
-$TKGEndpoint = "10.130.11.10" #TKG Endpoint address
-$ImageRegistry = "" #Location of a the container image registery with TKG images
+$TKGBootStrapper = "10.10.0.0/16" #Bootstrapper address (Can be single IP or range)
+$TKGEndpoint = "10.130.11.10" #TKG Endpoint address (VIP or Load Balancer)
+$ImageRegistry = "" #Location of a the container image registery with TKG images. (Empty uses the public repo)
 $DNS = "10.130.5.140" #DNS Server Address
 $NTP = "10.11.50.12" #NTP Server Address
 $LDAPServer = "10.11.3.162" #LDAPS Server for Pinniped/Dex
+################################################################################
 
 #import modules needed to communicate with NSX-T and vCenter
 Import-Module VMware.VMC.NSXT.psd1
