@@ -14,8 +14,20 @@ $LDAPServer = "10.11.3.162" #LDAPS Server for Pinniped/Dex
 ################################################################################
 
 #import modules needed to communicate with NSX-T and vCenter
-Import-Module VMware.VMC.NSXT.psd1
-Import-Module VMware.VMC.psd1
+if (Get-Module -ListAvailable -Name VMware.VMC.NSXT) {
+    Write-Host "NSXT Module exists"
+} 
+else {
+    Write-Host "NSXT Module does not exist"
+    Install-module VMware.VMC.NSXT
+}
+if (Get-Module -ListAvailable -Name VMware.VMC) {
+    Write-Host "VMC Module exists"
+} 
+else {
+    Write-Host "NSXT Module does not exist"
+    Install-module VMware.VMC
+}
 
 #Connect to VMware Cloud on AWS Resources
 Connect-Vmc -RefreshToken $RefreshToken 
